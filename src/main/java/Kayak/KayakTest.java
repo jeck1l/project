@@ -1,5 +1,7 @@
-package org.example;
+package Kayak;
 
+import Kayak.KayakBase;
+import Kayak.KayakHome;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -7,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class KayakTest extends KayakBase{
+public class KayakTest extends KayakBase {
 
     private static WebDriver driver;
 

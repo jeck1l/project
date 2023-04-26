@@ -1,4 +1,4 @@
-package org.example;
+package Kayak;
 
 import org.openqa.selenium.WebDriver;
 
