@@ -18,7 +18,7 @@ public class DbConnection {
         }
     }
 
-
+//
     private void createTable() {
         String hotelTable = "CREATE TABLE hotels " +
                 "(id SERIAL PRIMARY KEY, " +
