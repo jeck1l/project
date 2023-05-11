@@ -28,7 +28,7 @@ public class ProductSearchTest extends MokiVeziBase {
             WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/header/div[1]/div/nav/div[2]/div[2]/form/div[2]/button")));
             searchButton.click();
 
-            WebElement searchResult = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("CSS_SELECTOR_PAVADINIMUI")));
+            WebElement searchResult = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"product-item-1033441\"]/div[1]/div/h6/a")));
             Assert.assertNotNull(searchResult);
 
             System.out.println("Prekė rasta!");
@@ -38,20 +38,20 @@ public class ProductSearchTest extends MokiVeziBase {
     }
 
 
-    @After
-    public void tearDown() {
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        driver.quit();
-    }
+//    @After
+//    public void tearDown() {
+//        try {
+//            Thread.sleep(5000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//        driver.quit();
+
 
     public static void main(String[] args) {
         ProductSearchTest test = new ProductSearchTest();
         test.setUp();
         test.testProductSearch();
-        test.tearDown();
+//        test.tearDown();
     }
 }
