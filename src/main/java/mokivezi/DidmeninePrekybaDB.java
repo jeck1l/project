@@ -20,7 +20,7 @@ public class DidmeninePrekybaDB {
     public List<String> scrapeData() {
         driver.get("https://mokivezi.lt/didmenine-prekyba");
 
-        List<WebElement> elements = driver.findElements(By.cssSelector(".class-of-elements")); // Replace with actual CSS selector
+        List<WebElement> elements = driver.findElements(By.cssSelector(""));
         List<String> data = new ArrayList<>();
         for (WebElement element : elements) {
             data.add(element.getText());
