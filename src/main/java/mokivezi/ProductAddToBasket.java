@@ -28,9 +28,9 @@ public class ProductAddToBasket extends ProductSearchTest {
             addToCartButton.click();
 
 
-            System.out.println("Prekė pridėtą į krepšelį");
+            System.out.println("Test2: Prekė pridėtą į krepšelį");
         } catch (Exception e) {
-            System.out.println("Prekės nepridėjo " + e.getMessage());
+            System.out.println("Test2: Prekės nepridėjo " + e.getMessage());
         }
     }
 

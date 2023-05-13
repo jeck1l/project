@@ -31,9 +31,9 @@ public class ProductSearchTest extends MokiVeziBase {
             WebElement searchResult = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"product-item-1033441\"]/div[1]/div/h6/a")));
             Assert.assertNotNull(searchResult);
 
-            System.out.println("Prekė rasta!");
+            System.out.println("Test1: Prekė rasta!");
         } catch (Exception e) {
-            System.out.println("Prekės neranda :( " + e.getMessage());
+            System.out.println("Test1: Prekės neranda :( " + e.getMessage());
         }
     }
 
