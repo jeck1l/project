@@ -1,18 +1,17 @@
 package mokivezi;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-
-
 public class ProductAddToBasket extends ProductSearchTest {
 
-    public ProductAddToBasket() {
-        super();
+    @BeforeEach
+    public void setUp() {
+        driver.get("https://mokivezi.lt/");
     }
 
     @Test
@@ -23,18 +22,17 @@ public class ProductAddToBasket extends ProductSearchTest {
             WebElement product = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".item-add-to-cart , .product-card__img-container")));
             product.click();
 
-
             WebElement addToCartButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".product-quantity__submit")));
             addToCartButton.click();
 
 
-            System.out.println("Test2: Prekė pridėtą į krepšelį");
+            System.out.println("Test2: Prekės pridėjiimo į krepšelį testas");
         } catch (Exception e) {
             System.out.println("Test2: Prekės nepridėjo " + e.getMessage());
         }
     }
 
-    @After
+    @AfterEach
     public void tearDown() {
         try {
             Thread.sleep(5000);
@@ -42,12 +40,5 @@ public class ProductAddToBasket extends ProductSearchTest {
             e.printStackTrace();
         }
         driver.quit();
-    }
-
-    public static void main(String[] args) {
-        ProductAddToBasket test = new ProductAddToBasket();
-        test.setUp();
-        test.testAddToCart();
-        test.tearDown();
     }
 }

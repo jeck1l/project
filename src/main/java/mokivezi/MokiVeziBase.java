@@ -1,4 +1,7 @@
 package mokivezi;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.FluentWait;
@@ -19,5 +22,15 @@ public class MokiVeziBase {
                 .withTimeout(Duration.ofSeconds(30))
                 .pollingEvery(Duration.ofSeconds(5))
                 .ignoring(org.openqa.selenium.NoSuchElementException.class);
+    }
+
+    @BeforeEach
+    public void setup() {
+        driver.get("https://mokivezi.lt/");
+    }
+
+    @AfterEach
+    public void tearDown() {
+        driver.quit();
     }
 }

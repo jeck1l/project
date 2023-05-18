@@ -1,22 +1,19 @@
 package mokivezi;
 
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class ProductSearchTest extends MokiVeziBase {
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-    public ProductSearchTest() {
-        super();
-    }
+public class ProductSearchTest extends PageLoadTest {
 
-    @Before
+    @BeforeEach
     public void setUp() {
-        driver.get("https://mokivezi.lt");
+        driver.get("https://mokivezi.lt/");
     }
 
     @Test
@@ -29,29 +26,21 @@ public class ProductSearchTest extends MokiVeziBase {
             searchButton.click();
 
             WebElement searchResult = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"product-item-1033441\"]/div[1]/div/h6/a")));
-            Assert.assertNotNull(searchResult);
+            assertNotNull(searchResult);
 
-            System.out.println("Test1: Prekė rasta!");
+            System.out.println("Test2: Prekės paieškos testas");
         } catch (Exception e) {
-            System.out.println("Test1: Prekės neranda :( " + e.getMessage());
+            System.out.println("Test2: Prekės neranda :( " + e.getMessage());
         }
     }
 
-
-//    @After
-//    public void tearDown() {
-//        try {
-//            Thread.sleep(5000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//        driver.quit();
-
-
-    public static void main(String[] args) {
-        ProductSearchTest test = new ProductSearchTest();
-        test.setUp();
-        test.testProductSearch();
-//        test.tearDown();
+    @AfterEach
+    public void tearDown() {
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        driver.quit();
     }
 }
