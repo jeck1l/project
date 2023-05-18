@@ -35,3 +35,7 @@ https://www.selenium.dev/downloads/ - parsisiųsti JAVA skirtą biblioteką
 
 ChromeDdriver:
 https://chromedriver.chromium.org/ //parsisiųsti reikalingą driver pagal Jūsų Chrome naršyklės versiją
+Konsolės paleidimas (Windows vartuotojui)
+paspausti klaviaturoje WIN+R
+parašyti CMD
+paspausti enter
