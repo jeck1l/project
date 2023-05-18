@@ -1,0 +1,37 @@
+MokiVezi Testų Paleidimo Instrukcija
+Šiame dokumente pateikiama informacija, kaip sukompiliuoti ir paleisti testus Java kalba, naudojant JUnit ir Selenium bibliotekas.
+
+Pradiniai Reikalavimai
+Jūsų sistemoje turi būti įdiegta Java (JDK ir JRE), versija 8 arba naujesnė. Galite patikrinti ar Java yra įdiegta komandinėje eilutėje (CMD arba Terminal) naudodami komandą java -version.
+
+Įdiegtas Maven projektų valdymo įrankis. Tai galite patikrinti komandinėje eilutėje įrašę mvn -v.
+
+Įdiegtas JUnit testavimo įrankis.
+
+Įdiegtas Selenium WebDriver, kuriuo atliekami naršyklės automatiniai testai. Testuose naudojamas ChromeDriver, todėl reikės įdiegti ir Google Chrome naršyklę. ChromeDriver failas turi būti patalpintas sistemoje, kurioje bus paleidžiami testai.
+
+Projektų Paruošimas
+Atsisiųskite arba klonuokite šį projektą į vietinę sistemą.
+
+Pakeiskite ChromeDriver kelią pagal Jūsų sistemos reikalavimus MokiVeziBase.java faile. Kintamojo pavadinimas yra "webdriver.chrome.driver\\" ir jis turi rodyti į jūsų chromedriver.exe failą.
+
+System.setProperty("webdriver.chrome.driver\\", "C:\\Users\\д\\Downloads\\Naujas aplankas\\chromedriver_win32\\chromedriver.exe");
+
+Atsidarykite terminalą arba komandinę eilutę ir nueikite į projekto aplanką.
+Testų Kompiliavimas ir Paleidimas
+Paleiskite šias komandas komandinėje eilutėje projekto aplanko viduje:
+
+Projektų kompiliavimas:
+mvn compile
+
+Testų paleidimas:
+mvn test
+
+Komanda mvn test paleis visus projektuose esančius testus. Po testų vykdymo rezultatus galima peržiūrėti terminalo išeigoje.
+
+Sėkmės vykdant testus! Jeigu kils kokių nors problemų, prašome pranešti. 
+SeleniumWebDriver:
+https://www.selenium.dev/downloads/ - parsisiųsti JAVA skirtą biblioteką
+
+ChromeDdriver:
+https://chromedriver.chromium.org/ //parsisiųsti reikalingą driver pagal Jūsų Chrome naršyklės versiją
